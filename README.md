@@ -25,6 +25,8 @@ The dataset has an imbalanced distribution:
 | 400x          | 588    | 1232      | 1820  | 32.3%    | 67.7%       |
 | **Total**     | **2480** | **5429**  | **7909** | **31.4%** | **68.6%** |
 
+
+## Project Structure
 ``` bash
 .
 ├── Basic CNN Training/

@@ -30,17 +30,17 @@ The dataset has an imbalanced distribution:
 ``` bash
 .
 ├── Basic CNN Training/
-│   ├── cnn_training_patience10.py         # CNN model with patience=10
-│   ├── cnn_training_patience5.py          # CNN model with patience=5
-│   └── dataset_partition.py               # Dataset splitting utilities
+│   ├── cnn_training_patience10.py                  # CNN model with patience=10
+│   ├── cnn_training_patience5.py                   # CNN model with patience=5
+│   └── dataset_partition.py                        # Dataset splitting utilities
 │
 ├── Transfer Learning on Pretrained Models/
-│   ├── transfer_learning_mobilenet.py     # MobileNet implementation
-│   ├── transfer_learning_resnet50.py      # ResNet50 implementation
-│   └── transfer_learning_vgg16.py         # VGG16 implementation
+│   ├── transfer_learning_mobilenet.py              # MobileNet implementation
+│   ├── transfer_learning_resnet50.py               # ResNet50 implementation
+│   └── transfer_learning_vgg16.py                  # VGG16 implementation
 │
 ├── Self Supervised Learning SimCLR/
-│   ├── dataset_restructuring.py           # Dataset preparation for SimCLR
+│   ├── dataset_restructuring.py                    # Dataset preparation for SimCLR
 │   ├── resnet18_fine_tuning_simclr_weights.py      # Fine-tuning with SimCLR
 │   └── simclr_unlabeled_weights_training.py        # SimCLR pretraining
 │

@@ -25,6 +25,60 @@ The dataset has an imbalanced distribution:
 | 400x          | 588    | 1232      | 1820  | 32.3%    | 67.7%       |
 | **Total**     | **2480** | **5429**  | **7909** | **31.4%** | **68.6%** |
 
+``` bash
+.
+├── Basic CNN Training/
+│   ├── cnn_training_patience10.py         # CNN model with patience=10
+│   ├── cnn_training_patience5.py          # CNN model with patience=5
+│   └── dataset_partition.py               # Dataset splitting utilities
+│
+├── Transfer Learning on Pretrained Models/
+│   ├── transfer_learning_mobilenet.py     # MobileNet implementation
+│   ├── transfer_learning_resnet50.py      # ResNet50 implementation
+│   └── transfer_learning_vgg16.py         # VGG16 implementation
+│
+├── Self Supervised Learning SimCLR/
+│   ├── dataset_restructuring.py           # Dataset preparation for SimCLR
+│   ├── resnet18_fine_tuning_simclr_weights.py      # Fine-tuning with SimCLR
+│   └── simclr_unlabeled_weights_training.py        # SimCLR pretraining
+│
+├── Graphs & Evaluation Metrics/
+│   ├── Basic CNN Implementation/
+│   │   ├── Patience 5/
+│   │   │   ├── Accuracy & Loss Curves.png
+│   │   │   ├── Confusion Matrix.png
+│   │   │   └── Evaluation Metrics.png
+│   │   └── Patience 10/
+│   │       ├── Accuracy & Loss Curves.png
+│   │       ├── Confusion Matrix.png
+│   │       └── Evaluation Metrics.png
+│   │
+│   ├── Self Supervised Learning SimCLR/
+│   │   ├── Contrastive Loss Curves.png
+│   │   ├── Feature Embeddings.png
+│   │   └── Training Progress/
+│   │       ├── Epoch_1.png
+│   │       └── Final_Epoch.png
+│   │
+│   ├── SimCLR ResNet18/
+│   │   ├── Accuracy & Loss Curves.png
+│   │   ├── Confusion Matrix.png
+│   │   ├── Evaluation Metrics.png
+│   │   ├── ResNet18 Training on Weights End.png
+│   │   ├── ResNet18 Training on Weights Start.png
+│   │   └── Sample Pred 1.png
+│   │
+│   └── Transfer Learning Resnet50/
+│       ├── Accuracy & Loss Curves.png
+│       ├── Confusion Matrix.png
+│       └── Evaluation Metrics.png
+│
+└── v1 Training Codes/                     # Contains source codes for previous implementations
+    ├── old_cnn_implementation.py
+    ├── previous_data_processing.py
+    └── legacy_training_scripts.py
+```
+
 ## Methodology
 
 ### 1. Basic CNN Implementation

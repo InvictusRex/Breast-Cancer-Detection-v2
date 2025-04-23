@@ -42,7 +42,7 @@ data_dir = r'E:\1_Work_Files\6_Project - Breast Cancer Detection\BreaKHis_v1\fla
 label_map = {0: "benign", 1: "malignant"}
 
 transform = transforms.Compose([
-    transforms.Resize((224, 224)),
+    transforms.Resize((160, 160)),
     transforms.ToTensor(),
     transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
 ])
@@ -51,9 +51,9 @@ train_dataset = ClassificationDataset(os.path.join(data_dir, "train"), transform
 val_dataset   = ClassificationDataset(os.path.join(data_dir, "val"), transform, label_map)
 test_dataset  = ClassificationDataset(os.path.join(data_dir, "test"), transform, label_map)
 
-train_loader = DataLoader(train_dataset, batch_size=512, shuffle=True, pin_memory=True)
-val_loader   = DataLoader(val_dataset, batch_size=512, shuffle=False, pin_memory=True)
-test_loader  = DataLoader(test_dataset, batch_size=512, shuffle=False, pin_memory=True)
+train_loader = DataLoader(train_dataset, batch_size=256, shuffle=True, pin_memory=True)
+val_loader   = DataLoader(val_dataset, batch_size=256, shuffle=False, pin_memory=True)
+test_loader  = DataLoader(test_dataset, batch_size=256, shuffle=False, pin_memory=True)
 
 # Model definition with ResNet50
 class SimCLRClassifier(nn.Module):
@@ -75,7 +75,7 @@ class SimCLRClassifier(nn.Module):
 model = SimCLRClassifier().to(device)
 
 # Load pretrained encoder weights
-pretrained_weights = torch.load(r'E:\1_Work_Files\6_Project - Breast Cancer Detection\Breast-Cancer-Detection-v2\Models\best_simclr_model.pth', map_location=device)
+pretrained_weights = torch.load(r'E:\1_Work_Files\6_Project - Breast Cancer Detection\Breast-Cancer-Detection-v2\Models\resnet50_best_simclr_weights_model.pth', map_location=device)
 model.encoder.load_state_dict(pretrained_weights, strict=False)
 
 # Freeze encoder except last block
@@ -235,5 +235,5 @@ def visualize_predictions(model, loader, num_images=8):
 train(model, train_loader, val_loader, num_epochs=100, patience=15)
 
 # Load best and evaluate
-model.load_state_dict(torch.load("best_finetuned_model.pth"))
+model.load_state_dict(torch.load("best_finetuned_model_resnet50.pth"))
 evaluate(model, test_loader, verbose=True)
